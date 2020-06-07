@@ -151,10 +151,6 @@ class BlockChain {
 		return hash;
 	};
 
-	registerNode (address) {
-		this.nodes.add(new URL(address));
-	};
-
 	valididateChain (chain) {
 		let currentIndex = 1;
 		let [ lastBlock ] = chain;
@@ -175,23 +171,6 @@ class BlockChain {
 		}
 
 		return true;
-	};
-
-	resolveConflicts () {
-		const { nodes } = this;
-		let maxLength = this.chain.length;
-
-		nodes.forEach(node => {
-			const endpoint = `${node.origin}/chain`;
-			fetch(endpoint)
-				.then(response => response.json())
-				.then((data) => {
-					if (that.valididateChain(data) && data.length > maxLength) {
-						this.chain = newChain;
-						maxLength = newChain.length;
-					}
-				});
-		});
 	};
 
 	close = () => {

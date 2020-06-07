@@ -60,37 +60,19 @@ app.post('/transaction/create', (req, res) => {
 		sender,
 	} = req.query;
 
-	if (amount === '') {
+	if (!amount) {
 		res.status(400).send('amount is required');
 		return;
-	} else if(recipient === '') {
+	} else if(!recipient) {
 		res.status(400).send('recipient is required');
 		return;
-	} else if (sender === '') {
+	} else if (!sender) {
 		res.status(400).send('sender is required');
 		return;
 	}
 
-	const index = blockchain.generateNewTransaction(req.query.sender,
-		 req.query.recipient, req.query.ammount);
-	res.status(200).send(`Transaction will be added to block ${  index}`);
-});
-
-app.post('/node/register', (req, res) => {
-	const { nodes } = req.query;
-
-	if (nodes) {
-		res.status(400).send('No nodes provided to regester. Please check your request.');
-	}
-	nodes.forEach(element => {
-		blockchain.registerNode(element);
-	});
-
-	res.status(200).send();
-});
-
-app.get('/node/resolve', (req, res) => {
-	res.send(JSON.stringify(blockchain.resolveConflicts()));
+	const index = blockchain.generateNewTransaction(sender, recipient, amount);
+	res.status(200).send(`Transaction will be added to block ${index}`);
 });
 
 const port = process.env.SERVER_PORT || 8080;
