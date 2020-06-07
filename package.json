@@ -1,0 +1,53 @@
+{
+  "name": "blockchain-js",
+  "version": "0.0.1",
+  "description": "Simple implementation of a Blockchain with an API to provide testing for the Sumobits wallet.",
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "gulp",
+    "build-debug": "gulp package-debug",
+    "start": "npx ./dist/app.js",
+    "lint": "eslint .",
+    "lint-fix": "eslint . --fix",
+    "test": "mocha test",
+    "clean": "rm -rf node_modules && rm -f yarn.lock && yarn cache clean",
+    "reinstall": "rm -rf node_modules && rm -f yarn.lock && yarn cache clean && yarn install"
+  },
+  "author": "TJ Cook<d0rkish@protonmail.com>",
+  "license": "MIT",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sumobits/blockchain-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sumobits/blockchain-js/issues"
+  },
+  "dependencies": {
+    "core-js": "^3.6.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "fs-extra": "^9.0.1",
+    "path": "^0.12.7",
+    "regenerator-runtime": "^0.13.5",
+    "uuidv4": "^6.1.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.10.1",
+    "@babel/core": "^7.10.2",
+    "@babel/plugin-proposal-class-properties": "^7.10.1",
+    "@babel/preset-env": "^7.10.2",
+    "@babel/register": "^7.10.1",
+    "babel-eslint": "^10.1.0",
+    "babel-preset-env": "^1.7.0",
+    "del": "^5.1.0",
+    "eslint": "6.8.0",
+    "eslint-plugin-import": "2.20.1",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-eslint": "^6.0.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-uglify": "^3.0.2",
+    "mocha": "^7.2.0"
+  }
+}
