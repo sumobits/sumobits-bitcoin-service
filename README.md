@@ -1,5 +1,5 @@
 ### Basic
-This project is just a simple implementation of a Blockchain using Javascript written using the the tutorial [Javascript blockchain tutorial](https://www.hamrodev.com/en/blog/tutorials/javascript-blockchain). The purpose of implementing this was to be able to test another project of mine which is the implementation of a Bitcoin wallet using React Native. I will link to that project once it has been submitted.
+This is the service layer of for Sumobits Wallet. This project does implement a simple Blockchain using Javascript with the help of a tutorial [Javascript blockchain tutorial](https://www.hamrodev.com/en/blog/tutorials/javascript-blockchain).
 
 ### Usage
 See **package.json** scripts for available executions.
