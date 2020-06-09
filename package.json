@@ -1,5 +1,5 @@
 {
-  "name": "blockchain-js",
+  "name": "sumobits-bitcoin-service",
   "version": "0.0.1",
   "description": "Simple implementation of a Blockchain with an API to provide testing for the Sumobits wallet.",
   "main": "./dist/index.js",
@@ -18,10 +18,10 @@
   "private": false,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sumobits/blockchain-js.git"
+    "url": "git+https://github.com/sumobits/sumobits-bitcoin-service.git"
   },
   "bugs": {
-    "url": "https://github.com/sumobits/blockchain-js/issues"
+    "url": "https://github.com/sumobits/sumobits-bitcoin-service/issues"
   },
   "dependencies": {
     "core-js": "^3.6.5",
