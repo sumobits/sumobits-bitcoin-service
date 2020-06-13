@@ -77,15 +77,27 @@ app.post('/transaction/create', (req, res) => {
 
 const port = process.env.SERVER_PORT || 8080;
 const server = app.listen(port, () => {
-	console.log(`Blockchain API service listenting on ${port}`);
+	console.info(`Blockchain API service listenting on ${port}`);
 });
 
 server.on('close', () => {
+	console.info('Shutting down services ....');
 	blockchain.close();
 });
 
+if (process.platform === 'win32') {
+	const reader = readline.createInterface({
+		input: process.stdin,
+		output: process.stdout
+	});
+
+	reader.on('SIGINT', () => {
+		process.emit('SIGINT');
+	});
+}
+
 process.on('SIGINT', () => {
-	console.info('Caught interrupt signal');
+	console.warn('Caught interrupt signal');
 	server.close(() => {
 		process.exit();
 	});

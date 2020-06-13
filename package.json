@@ -7,6 +7,7 @@
     "build": "gulp",
     "build-debug": "gulp package-debug",
     "start": "npx ./dist/app.js",
+    "start-debug": "set NODE_ENV=development && npx ./dist/app.js",
     "lint": "eslint .",
     "lint-fix": "eslint . --fix",
     "test": "mocha test",
